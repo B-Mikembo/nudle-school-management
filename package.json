@@ -9,6 +9,8 @@
     "node": ">=24"
   },
   "scripts": {
+    "e2e": "playwright test --ui --config src/test/webapp/e2e/playwright.config.ts",
+    "e2e:headless": "playwright test --config src/test/webapp/e2e/playwright.config.ts",
     "dev": "npm-run-all --parallel dev:*",
     "dev:vite": "vite",
     "build": "npm-run-all build:*",
@@ -27,6 +29,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@playwright/test": "1.61.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/react": "16.3.2",
     "@types/node": "24.13.2",
