@@ -1,0 +1,14 @@
+{
+  "module" : "react-core",
+  "date" : "2026-07-16T18:59:11.581807400Z",
+  "properties" : {
+    "packageName" : "dev.brice.nudleschoolmanagement",
+    "projectName" : "Nudle School Management Application",
+    "baseName" : "nudleSchoolManagement",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8080,
+    "endOfLine" : "lf",
+    "indentSize" : 2,
+    "springConfigurationFormat" : "yaml"
+  }
+}
