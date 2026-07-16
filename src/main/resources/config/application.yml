@@ -1,0 +1,8 @@
+logging:
+  level:
+    dev:
+      brice:
+        nudleschoolmanagement: INFO
+spring:
+  application:
+    name: nudleSchoolManagement
