@@ -1,5 +1,6 @@
 export class Student {
   constructor(username: string) {
     if (username.length < 3) throw Error('Username must be at least 3 characters long!');
+    if (username.length > 20) throw Error('Username must be at most 20 characters long!');
   }
 }
