@@ -1,0 +1,33 @@
+name: build
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || (github.ref == 'refs/heads/develop' && github.sha) || github.ref }}
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  tests-windows:
+    name: tests-windows
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - name: 'Setup checkout project'
+        uses: actions/checkout@v7
+      - name: 'Setup: environment'
+        id: setup
+        uses: ./.github/actions/setup
+      - name: 'Init: cache local Maven repository'
+        uses: actions/cache@v6
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-
+      - name: 'Init: install Node.js packages'
+        run: npm ci
+      - name: 'Test: run backend tests'
+        run: |
+          ./mvnw clean verify
