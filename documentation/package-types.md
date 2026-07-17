@@ -10,7 +10,6 @@ To mark a package, you have to add a `package-info.java` file at the package roo
 ```java
 @dev.brice.nudleschoolmanagement.SharedKernel
 package dev.brice.nudleschoolmanagement;
-
 ```
 
 or:
@@ -18,5 +17,4 @@ or:
 ```java
 @dev.brice.nudleschoolmanagement.BusinessContext
 package dev.brice.nudleschoolmanagement;
-
 ```

@@ -2,11 +2,11 @@ package dev.brice.nudleschoolmanagement.wire.security.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import dev.brice.nudleschoolmanagement.IntegrationTest;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.filter.CorsFilter;
-import dev.brice.nudleschoolmanagement.IntegrationTest;
 
 @IntegrationTest
 class CorsFilterConfigurationIT {

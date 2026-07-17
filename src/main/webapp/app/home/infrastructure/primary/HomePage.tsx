@@ -1,7 +1,7 @@
 import './HomePage.css';
 
-import Seed4JLogo from '@assets/seed4j_logo-name.png';
 import ReactLogo from '@assets/ReactLogo.png';
+import Seed4JLogo from '@assets/seed4j_logo-name.png';
 
 function HomePage() {
   return (
@@ -12,7 +12,10 @@ function HomePage() {
         <img alt="Seed4J logo" width={200} height={200} src={Seed4JLogo} />
         <h1>React + TypeScript + Vite</h1>
         <p>
-          Recommended IDE setup:&nbsp;<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VSCode</a>
+          Recommended IDE setup:&nbsp;
+          <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
+            VSCode
+          </a>
         </p>
 
         <p>

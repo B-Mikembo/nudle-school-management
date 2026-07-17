@@ -1,9 +1,9 @@
 package dev.brice.nudleschoolmanagement.wire.frontend.infrastructure.primary;
 
+import dev.brice.nudleschoolmanagement.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import dev.brice.nudleschoolmanagement.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 
 @Controller
 @ExcludeFromGeneratedCodeCoverage

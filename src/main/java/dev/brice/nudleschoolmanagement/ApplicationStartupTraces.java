@@ -1,5 +1,7 @@
 package dev.brice.nudleschoolmanagement;
 
+import dev.brice.nudleschoolmanagement.shared.error.domain.Assert;
+import dev.brice.nudleschoolmanagement.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import org.apache.commons.lang3.ArrayUtils;
@@ -7,8 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
-import dev.brice.nudleschoolmanagement.shared.error.domain.Assert;
-import dev.brice.nudleschoolmanagement.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
 
 final class ApplicationStartupTraces {
 
