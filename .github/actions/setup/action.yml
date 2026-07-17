@@ -40,6 +40,7 @@ runs:
     - name: 'Disable maven interactive mode'
       shell: bash
       run: |
+        sed -i '/<interactiveMode>/d' ~/.m2/settings.xml
         sed -i 's/<servers>/<interactiveMode>false\<\/interactiveMode>\n  <servers>/g' ~/.m2/settings.xml
     - name: 'Setup: check tools'
       shell: bash
