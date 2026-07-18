@@ -14,7 +14,7 @@ COPY --from=build /code/*.jar /code/
 RUN \
     groupadd nudle-school-management && \
     useradd nudle-school-management -s /bin/bash/ -m -g nudle-school-management -G sudo && \
-    echo 'B-Mikembo:nudle-school-management'|chpasswd
+    echo 'bricekm:nudle-school-management'|chpasswd
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JAVA_OPTS="" \
     NUDLE_SCHOOL_MANAGEMENT_FORCED_PROJECT_FOLDER=/tmp/nudle-school-management
