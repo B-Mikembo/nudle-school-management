@@ -7,7 +7,7 @@ RUN chmod +x mvnw \
     -Dmaven.javadoc.skip=true \
     -Dmaven.source.skip \
     -Ddevelocity.cache.remote.enabled=false \
-    && mv /code/app/target/*-exec.jar /code/nudle-school-management.jar
+    && mv /code/app/target/*.jar /code/nudle-school-management.jar
 
 FROM eclipse-temurin:25.0.3_9-jre
 COPY --from=build /code/*.jar /code/
