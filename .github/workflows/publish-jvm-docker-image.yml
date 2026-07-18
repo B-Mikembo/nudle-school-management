@@ -1,0 +1,38 @@
+name: Build and publish JVM-based images
+on:
+  push:
+    branches:
+      - develop
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - develop
+jobs:
+  build_jvm_docker_image:
+    name: Build JVM-based Docker image
+    runs-on: ubuntu-24.04
+    env:
+      DOCKER_IMAGE_NAME: 'bricekm/nudle-school-management'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v6.2.0
+        with:
+          images: ${{ env.DOCKER_IMAGE_NAME }}
+      - name: Login to Docker Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v4.4.0
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN}}
+      - name: Build Docker image for pull requests
+        if: github.event_name == 'pull_request'
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          tags: ${{ env.DOCKER_IMAGE_NAME }}:pr
+          labels: ${{ steps.meta.outputs.labels }}
