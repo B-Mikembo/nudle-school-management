@@ -13,7 +13,7 @@ FROM eclipse-temurin:25.0.3_9-jre
 COPY --from=build /code/*.jar /code/
 RUN \
     groupadd nudle-school-management && \
-    useradd nudle-school-management -s /bin/bash/ -m -g nudle-school-management -G sudo && \
+    useradd nudle-school-management -s /bin/bash -m -g nudle-school-management -G sudo && \
     echo 'bricekm:nudle-school-management'|chpasswd
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JAVA_OPTS="" \
