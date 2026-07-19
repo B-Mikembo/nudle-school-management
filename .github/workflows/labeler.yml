@@ -5,6 +5,14 @@ on:
   pull_request_target:
     types: [opened]
 
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
 jobs:
   apply-label:
     runs-on: ubuntu-latest
@@ -13,6 +21,7 @@ jobs:
         uses: actions/github-script@v9
         with:
           script: console.log(context)
+
       - name: Check for existing labels
         id: check-issue-pr-labels
         uses: actions/github-script@v9
@@ -31,6 +40,7 @@ jobs:
             console.log('Has labels:', hasLabelsResult);
 
             return hasLabelsResult;
+
       - name: Label issues and PRs
         if: steps.check-issue-pr-labels.outputs.result == 'false'
         uses: github/issue-labeler@v3.4
